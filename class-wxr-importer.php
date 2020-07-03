@@ -840,6 +840,8 @@ class WXR_Importer extends WP_Importer {
 			$postdata[ $key ] = $data[ $key ];
 		}
 
+		$postdata = wp_slash( $postdata );
+		
 		$postdata = apply_filters( 'wp_import_post_data_processed', $postdata, $data );
 
 		if ( 'attachment' === $postdata['post_type'] ) {
